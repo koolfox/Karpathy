@@ -33,11 +33,12 @@
 
 ```bash
 cd /Users/hesam/Desktop/Karpathy
-git init                      # هنوز انجام نشده — ریپو git نیست
-unzip -q micrograd-master.zip  # فقط اگر پوشه‌ی micrograd-master/ پاک شد
+git remote add origin <url-github>   # هنوز انجام نشده — ریپو فقط local است
+unzip -q micrograd-master.zip        # فقط اگر پوشه‌ی micrograd-master/ پاک شد
 ```
 
-`micrograd-master/` از قبل استخراج شده و دست‌نخورده است. در `.gitignore` فایل‌های `*.mp4` و `.DS_Store` رد شده‌اند.
+`git init` انجام شده و ریپو یک commit اولیه دارد. `micrograd-master/` از قبل استخراج شده و دست‌نخورده است.
+در `.gitignore` فایل‌های `*.mp4` و `.DS_Store` رد شده‌اند — **قبل از commit، `git status` را چک کن که هیچ MP4‌ای stage نشده باشد.**
 
 ## اجرا و تست
 
@@ -70,7 +71,7 @@ cd micrograd-master && jupyter nbconvert --to notebook --execute --stdout demo.i
 
 ## تله‌ها (همه بررسی‌شده‌اند)
 
-1. **`draw_dot` در پکیج `micrograd` نیست** — فقط داخل `trace_graph.ipynb` تعریف شده. README بالا آن را از پکیج نشان می‌دهد؛ کد را از نوت‌بوک بردار.
+1. **`draw_dot` در پکیج `micrograd` نیست** — فقط داخل `trace_graph.ipynb` تعریف شده. `micrograd-master/README.md` آن را از پکیج نشان می‌دهد (غلط است)؛ کد را از نوت‌بوک بردار.
 2. `pip install micrograd` (طبق README) **پکیج PyPI را کهنه** نصب می‌کند، نه کد محلی. برای کد محلی: `cd micrograd-master` یا `pip install -e .`.
 3. `setup.py` فقط متادیتا دارد و `install_requires` ندارد → همه‌ی وابستگی‌ها دستی نصب می‌شوند.
 4. `Layer` وقتی `nout == 1` خروجی **اسکالر** برمی‌گرداند نه لیست (`nn.py:37`). در `MLP(2, [16, 16, 1])` خروجی مستقیماً همان score است.
