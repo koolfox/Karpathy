@@ -1,0 +1,25 @@
+# ویدیوها محلی نگه‌داری می‌شوند ولی در ریپو commit نمی‌شوند.
+# در README به‌صورت embed یوتیوب لینک می‌شوند.
+*.mp4
+
+# فایل‌های موقت macOS
+.DS_Store
+
+# پایتون
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# نوت‌بوک‌ها
+.ipynb_checkpoints/
+
+# خروجی‌های سنگین مدل‌ها
+*.pt
+*.pth
+*.bin
+checkpoints/
